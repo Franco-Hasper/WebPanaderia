@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+ 
+  .textoPrincipal {
+	font-size: 48px;
+	top: 30%;
+	left: 50%;
+	background: linear-gradient(to left, #e6c81e, #8f6f06);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+  }
+  
+  
+  .boxLogin{
+	  width: 600px;
+	  padding: 20px;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%,-50%);
+	  text-align: center;
+	  
+  }
+  
+  .botonIngresar  button{
+	color: #e6c81e;
+	  border-radius: 24px;
+	  background: none;
+	  width: 100px;
+	  height: 30px;
+	  border: 2px solid #e6c81e;
+  }
+  
+  .botonIngresar button:hover {
+	  background:  #8f6f06;	
+  }
+  
+  
+  .labInput input{
+	  border: 0;
+	  background: none;
+	  display: block;
+	  margin: 35px auto;
+	  text-align: center;
+	  border: 2px solid #e6c81e;
+	  padding: 15px 10px;
+	  width: 200px;
+	  height: 5px;
+	  outline: none;
+	  color:#8f6f06;
+	  border-radius: 24px;
+	  /* efecto despliegue: tiempo de despliegue*/
+	  transition: 0.50s;
+  }
+  
+  .labInput input:focus{
+	  width: 250px;
+	  border-color: #8f6f06;
+  }
