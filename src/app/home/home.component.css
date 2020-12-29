@@ -1,0 +1,169 @@
+.card {
+
+	height: 230px;
+  -webkit-transition: height .4s;
+}
+
+.card:hover {
+  height: 250px;
+}
+
+.card:hover p.texto {
+  padding-top: 30px;
+  opacity: 1;
+}
+
+.card:hover img.icon {
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, .6);
+}
+
+.btn{
+	position: absolute;
+	width: 200px;
+	height: 230px;
+	float:left;
+	width: 200px;
+	height: 230px;
+	background-color:rgba(0,0,255,0.0);
+	border-color:rgba(0,0,255,0.0);
+	/*quitar linea azul al seleccionar boton*/
+	outline: none;
+	cursor: pointer;
+}
+
+#pasteleria {
+  background:
+    linear-gradient(to left, #D678D2 0%, #D678D2 50%, #A93AA4 51%, #A93AA4 100%);
+}
+
+#gourmet {
+  background: linear-gradient(to left, #2E2E2E 0%, #2E2E2E 50%, #000000 51%, #000000 100%);
+}
+
+#panificados {
+  background: linear-gradient(to left, #B8934E 0%, #B8934E 50%, #8A6422 51%, #8A6422 100%);
+}
+
+p.texto{
+	
+	font-family: 'sherlock';
+	font-size: 1.2em;
+	color:white;
+	text-align: center;
+	padding-top:50px;
+	opacity: .6;
+	-webkit-transition: padding-top .4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+div.box{
+	
+	position: absolute;
+	top: 30%;
+	margin: 0 auto;
+	width: auto;
+}
+
+div.contenedor{
+	width: 200px;
+	height: 230px;
+	float:left;
+	-webkit-transition: height .4s;
+}
+
+div.contenedor:hover{
+	height:250px;
+}
+
+div.contenedor:hover p.texto{
+	padding-top: 30px;
+	opacity: 1;
+}
+
+div.contenedor:hover img.icon{
+	
+	-webkit-box-shadow:0px 0px 0px 0px rgba(255,255,255,.6);
+}
+
+div#uno{
+	
+	background: linear-gradient(to left,#2E2E2E  0%,#2E2E2E 50%,#000000 51%, #000000 100%);
+}
+
+div#dos{
+	
+
+	background: linear-gradient(to left,#B8934E  0%,#B8934E 50%,#8A6422 51%, #8A6422 100%);
+}
+
+div#tres{
+	
+	background: linear-gradient(to left,#D678D2  0%,#D678D2 50%,#A93AA4 51%, #A93AA4 100%);
+}
+
+
+p.texto{
+	
+	font-family: 'sherlock';
+	font-size: 1.2em;
+	color:white;
+	text-align: center;
+	padding-top:50px;
+	opacity: .6;
+	-webkit-transition: padding-top .4s;
+}
+
+button{
+	position: absolute;
+	width: 200px;
+	height: 230px;
+	float:left;
+	width: 200px;
+	height: 230px;
+	background-color:rgba(0,0,255,0.0);
+	border-color:rgba(0,0,255,0.0);
+	/*quitar linea azul al seleccionar boton*/
+/*
+	outline: none;
+	cursor: pointer;
+
+}
+
+.contenido{
+	position: absolute;
+	top: 80%;
+
+	width: 500px;
+	margin: 20px auto;
+	text-align: justify;
+}
+
+.contenido p{
+	margin-bottom: 20px;
+}
+*/
