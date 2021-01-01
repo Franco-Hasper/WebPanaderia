@@ -1,0 +1,25 @@
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">ProductoId</th>
+      <th scope="col">Precio_bruto</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Precio_total</th>
+      <th scope="col">Codigo_iva</th>
+      <th scope="col">EstadoId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let precio of precios">
+      <th scope="row">{{precio.id}}</th>
+      <td>{{precio.productoId}}</td>
+      <td>{{precio.precio_bruto}}</td>
+      <td>{{precio.fecha}}</td>
+      <td>{{precio.precio_total}}</td>
+      <td>{{precio.codigo_iva}}</td>
+      <td>{{precio.estadoId}}</td>
+    </tr>
+    <tr>
+  </tbody>
+</table>

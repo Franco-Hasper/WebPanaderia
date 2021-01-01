@@ -4,11 +4,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ChartComponent } from './chart/chart.component';
+import { TableComponent } from './table/table.component';
+
 
 
 const routes: Route[] = [
@@ -16,6 +19,7 @@ const routes: Route[] = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'grafica', component: ChartComponent },
+  { path: 'tabla-precio', component: TableComponent },
 ];
 
 @NgModule({
@@ -23,14 +27,16 @@ const routes: Route[] = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ChartComponent
+    ChartComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HighchartsChartModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
