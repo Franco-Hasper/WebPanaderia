@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ChartComponent } from './chart/chart.component';
 import { TableComponent } from './table/table.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 
@@ -36,7 +37,8 @@ const routes: Route[] = [
     AppRoutingModule,
     HighchartsChartModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
