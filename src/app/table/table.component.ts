@@ -1,6 +1,6 @@
-import { PreciosService } from './../services/precios.service';
+import { ProductosService } from './../services/productos.service';
+import { Producto } from './../interfaces/productos';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Precio } from './../interfaces/precios';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
@@ -12,16 +12,16 @@ import { Subject } from 'rxjs';
 })
 export class TableComponent implements OnDestroy, OnInit {
   dtOptions: DataTables.Settings = {};
-  precios: Precio[] = [];
+  productos: Producto[] = [];
   // We use this trigger because fetching the list of persons can be quite long,
   // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private precioService: PreciosService, private httpClient: HttpClient) { }
+  constructor(private productoService: ProductosService, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.precioService.get().subscribe((data: Precio[]) => {
-           this.precios = data;
+    this.productoService.get().subscribe((data: Producto[]) => {
+           this.productos = data;
         // Calling the DT trigger to manually render the table
         this.dtTrigger.next();
       });

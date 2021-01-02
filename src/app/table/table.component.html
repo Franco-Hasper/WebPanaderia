@@ -1,33 +1,21 @@
-<br>
-<br>
-<div class="container ">
-  <div class="row">
+<div class="containerTable">
+  <div class="row m-0  justify-content-center align-items-center vh-100">
     <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
       <thead>
         <tr>
           <th scope="col">Id</th>
-            <th scope="col">ProductoId</th>
-            <th scope="col">Precio_bruto</th>
-            <th scope="col">Fecha</th>
-            <th scope="col">Precio_total</th>
-            <th scope="col">Codigo_iva</th>
-            <th scope="col">EstadoId</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let precio of precios">
-          <th scope="row">{{precio.id}}</th>
-          <td>{{precio.productoId}}</td>
-          <td>{{precio.precio_bruto}}</td>
-          <td>{{precio.fecha}}</td>
-          <td>{{precio.precio_total}}</td>
-          <td>{{precio.codigo_iva}}</td>
-          <td>{{precio.estadoId}}</td>
+        <tr *ngFor="let producto of productos" routerLink="/grafica">
+          <th scope="row" >{{producto.id}}</th>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.descripcion}}</td>
         </tr>
- 
       </tbody>
     </table>
-
   </div>
 </div>
 
