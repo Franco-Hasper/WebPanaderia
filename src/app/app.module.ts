@@ -20,7 +20,8 @@ const routes: Route[] = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'grafica', component: ChartComponent },
-  { path: 'tabla-precio', component: TableComponent },
+  { path: 'grafica/:id', component: ChartComponent },
+  { path: 'tabla-productos', component: TableComponent },
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Precio } from './../interfaces/precios';
@@ -6,29 +7,17 @@ import { Precio } from './../interfaces/precios';
   providedIn: 'root'
 })
 export class PreciosService {
+  id: string;
+
   API_ENDPOINT = 'http://127.0.0.1:8000/api';
-  constructor(private httpClient: HttpClient) { }
+
+  constructor(private httpClient: HttpClient) {
+  }
+  setId(valor:string){
+    this.id=valor;
+  }
+
   get() {
-    return this.httpClient.get(this.API_ENDPOINT + '/listaPrecios');
-  }
-  // get() {
-  // return this.httpClient.get( this.API_ENDPOINT+'/movies').subscribe; 
-  //en caso de que no funcione borrar la linea de abajo
-  // return this.httpClient.get(this.API_ENDPOINT + '/movies');
-  //}
-  save(precio: Precio) {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.httpClient.post(this.API_ENDPOINT + '/listaPrecios', precio, { headers: headers });
+    return this.httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id);
   }
 }
-
-/*import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class PreciosService {
-
-  constructor() { }
-}
-*/

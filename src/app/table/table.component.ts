@@ -3,6 +3,7 @@ import { Producto } from './../interfaces/productos';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,11 +14,13 @@ import { Subject } from 'rxjs';
 export class TableComponent implements OnDestroy, OnInit {
   dtOptions: DataTables.Settings = {};
   productos: Producto[] = [];
+
   // We use this trigger because fetching the list of persons can be quite long,
   // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private productoService: ProductosService, private httpClient: HttpClient) { }
+  constructor(private productoService: ProductosService) { 
+  }
 
   ngOnInit(): void {
     this.productoService.get().subscribe((data: Producto[]) => {

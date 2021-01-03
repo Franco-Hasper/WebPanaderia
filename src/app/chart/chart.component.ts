@@ -1,6 +1,11 @@
+import { PreciosService } from './../services/precios.service';
+import { Precio } from './../interfaces/precios';
 import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import * as Highcharts from "highcharts";
 import { Options } from "highcharts";
+import { Script } from 'vm';
+
 
 @Component({
   selector: 'app-chart',
@@ -8,12 +13,15 @@ import { Options } from "highcharts";
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent {
+  precios: Precio[] = [];
+  id: string;
+  listaPrecios: number[] = [];
 
   Highcharts: typeof Highcharts = Highcharts;
   updateFlag = false;
   oneToOneFlag = true;
-//Ir a cualquier ejemplo, buscar JS archivo y copiar desde chart:{}
-// reemplazar aqui para obtener el ejemplo
+  //Ir a cualquier ejemplo, buscar JS archivo y copiar desde chart:{}
+  // reemplazar aqui para obtener el ejemplo
   chartOptions: Options = {
     chart: {
       type: "spline"
@@ -25,8 +33,7 @@ export class ChartComponent {
       text: "Aqui un resultado ej Pan"
     },
     xAxis: {
-      categories: ["aqui", "el", "for", "de", "las", "fechas",
-        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      categories: [      ]
     },
     yAxis: {
       title: {
@@ -41,47 +48,49 @@ export class ChartComponent {
       {
         name: 'Producto 1',
         type: "line",
-        data: [7.0, 6.9, 9.5, 12.5, 98.2, 21.5, 25.2, 66.5, 33.3, 98.3, 23.9, 12.6]
-      },
-      {
-        name: 'producto 3',
-        type: "line",
-        data: [10, 52, 23,15, 1.2, 2.5, 2.2, 2.5, 2.3, 1.3, 1.9, 9.6]
-      }
-      ,
-      {
-        name: 'producto 4',
-        type: "line",
-        data: [21, 12, 3,4.5, 8.2, 21.5, 5.2, 6.5, 3.3, 8.3, 3.9, 9.6]
-      }
-      ,
-      {
-        name: 'producto 5',
-        type: "line",
-        data: [41, 12,43,15.5, 88.2, 28.5, 28.2, 28.5, 25.3, 16.3, 23.9, 20.6]
+        data: []
       }
     ]
-    
+
   };
-  
+
+
+
+  constructor(private precioService: PreciosService, private activateRoute: ActivatedRoute) {
+    this.updateData([231,31,321,321,3,1]);
+  }
+
+  ngOnInit(): void {
+
+
+
+    this.id = this.activateRoute.snapshot.params['id'];
+    this.precioService.setId(this.id);
+    this.precioService.get().subscribe((data: Precio[]) => {
+      this.precios = data;
+      this.precios.forEach(precio => {
+        this.listaPrecios.push(precio.precio_total);
+        console.log(this.listaPrecios);
+        this.updateData(this.listaPrecios);
+      });
+    });
+  }
+
+  updateData(data) {
+    this.chartOptions.series = [
+      {
+        name: 'Producto 1',
+        type: "line",
+        data: data
+      }
+    ];
+  }
+
+
+
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -101,3 +110,41 @@ export class ChartComponent implements OnInit {
 
 }
 */
+
+/*
+Highcharts: typeof Highcharts = Highcharts;
+  updateFlag = false;
+  oneToOneFlag = true;
+  //Ir a cualquier ejemplo, buscar JS archivo y copiar desde chart:{}
+  // reemplazar aqui para obtener el ejemplo
+  chartOptions: Options = {
+    chart: {
+      type: "spline"
+    },
+    title: {
+      text: "Historial de Precios Producto"
+    },
+    subtitle: {
+      text: "Aqui un resultado ej Pan"
+    },
+    xAxis: {
+      categories: [      ]
+    },
+    yAxis: {
+      title: {
+        text: "Precio $"
+      }
+    },
+    tooltip: {
+      valueSuffix: " $"
+    },
+    //Seccion datos.
+    series: [
+      {
+        name: 'Producto 1',
+        type: "line",
+        data: []
+      }
+    ]
+
+  };*/
