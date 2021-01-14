@@ -11,8 +11,23 @@ export class PreciosService {
 
   API_ENDPOINT = 'http://127.0.0.1:8000/api';
 
+  precios: Precio[];
+  listaPrecios: number[]=new Array();
+
   constructor(private httpClient: HttpClient) {
+    httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id).subscribe((data: Precio[]) => {
+      this.precios = data;
+      this.precios.forEach(precio => {
+        this.listaPrecios.push(precio.precio_total);
+      });
+    });
+
   }
+
+getListaPrecios(){
+  return this.listaPrecios;
+}
+
   setId(valor:string){
     this.id=valor;
   }

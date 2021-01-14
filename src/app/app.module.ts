@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { ChartComponent } from './chart/chart.component';
 import { TableComponent } from './table/table.component';
 import { DataTablesModule } from 'angular-datatables';
+import { PreciosComponent } from './precios/precios.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Route[] = [
   { path: 'grafica', component: ChartComponent },
   { path: 'grafica/:id', component: ChartComponent },
   { path: 'tabla-productos', component: TableComponent },
+  {path: 'precios', component: PreciosComponent },
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const routes: Route[] = [
     HomeComponent,
     LoginComponent,
     ChartComponent,
-    TableComponent
+    TableComponent,
+    PreciosComponent
   ],
   imports: [
     BrowserModule,
