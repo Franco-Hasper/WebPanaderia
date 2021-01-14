@@ -7,7 +7,7 @@
   height: 150px;
   width: 250px;
   background:
-    linear-gradient(to top, #D678D2 0%, #D678D2 49%, #000000 50%, #D678D2 51%, #A93AA4 51%, #A93AA4 100%);
+    linear-gradient(to top, #CFF4FC 0%, #C5E8EF 49%, #000000 50%, #CFF4FC 51%, #C5E8EF 100%);
   border-color: #000000;
   padding-left: 2%;
 }
