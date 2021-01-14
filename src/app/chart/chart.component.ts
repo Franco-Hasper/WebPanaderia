@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { PreciosService } from './../services/precios.service';
 import { Precio } from './../interfaces/precios';
 import { Component } from "@angular/core";
@@ -15,10 +16,12 @@ import { Options } from "highcharts";
 export class ChartComponent {
   id: string;
 
-  constructor(private precioService: PreciosService, private activateRoute: ActivatedRoute) {
+  constructor(private precioService: PreciosService, private activateRoute: ActivatedRoute, private httpClient: HttpClient) {
     this.id = this.activateRoute.snapshot.params['id'];
     this.precioService.setId(this.id);
+    this.precioService.obtenerLista(httpClient);
     this.updateData(this.precioService.getListaPrecios());
+    this.precioService.vaciarLista();
   }
 
 

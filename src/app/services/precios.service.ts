@@ -14,16 +14,22 @@ export class PreciosService {
   precios: Precio[];
   listaPrecios: number[]=new Array();
 
-  constructor(private httpClient: HttpClient) {
-    httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id).subscribe((data: Precio[]) => {
-      this.precios = data;
-      this.precios.forEach(precio => {
-        this.listaPrecios.push(precio.precio_total);
-      });
-    });
+  constructor() {
+
 
   }
+obtenerLista(httpClient){
+  httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id).subscribe((data: Precio[]) => {
+    this.precios = data;
+    this.precios.forEach(precio => {
+      this.listaPrecios.push(precio.precio_total);
+    });
+  });
+}
 
+vaciarLista(){
+  this.listaPrecios=[];
+}
 getListaPrecios(){
   return this.listaPrecios;
 }
