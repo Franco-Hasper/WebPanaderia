@@ -1,35 +1,16 @@
 <div class="containerHome">
     <div class="row">
-        <div class="col-md-4">
-            <div class="card" id="pasteleria"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="card" id="gourmet"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="card" id="panificados"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card" id="pasteleria"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="card" id="gourmet"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="card" id="panificados"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card" id="pasteleria"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="card" id="gourmet"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="card" id="panificados"></div>
+        <div class="col-md-4" *ngFor="let producto of productos">
+            <div class="card">
+                <div  class="col-md-12">
+                    PRODUCTO:
+                    {{producto.nombre}}
+                </div>
+                <div  class="col-md-12">
+                    DESCRIPCION:
+                    {{producto.descripcion}}
+                </div>
+            </div>
         </div>
     </div>
 </div>

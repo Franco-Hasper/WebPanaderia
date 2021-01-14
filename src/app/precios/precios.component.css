@@ -1,26 +1,14 @@
-
-
-.col-md-4{
-    padding-top: 3%;
-    padding-left: 7%;
+.col-md-4 {
+  padding-top: 3%;
+  padding-left: 7%;
 }
 
-.card{
-    height:150px;
-    width: 250px;
+.card {
+  height: 150px;
+  width: 250px;
+  background:
+    linear-gradient(to top, #D678D2 0%, #D678D2 49%, #000000 50%, #D678D2 51%, #A93AA4 51%, #A93AA4 100%);
+  border-color: #000000;
+  padding-left: 2%;
 }
-#pasteleria {
-    background:
-      linear-gradient(to top, #D678D2 0%, #D678D2 49%, #000000 50%, #D678D2 51%, #A93AA4 51%, #A93AA4 100%);
-        border-color: #000000;
-    }
-  
-  #gourmet {
-    background: linear-gradient(to top, #2E2E2E 0%, #2E2E2E 49%, #000000 50%, #000000 51%, #000000 100%);
-    border-color: #000000;
-}
-  
-  #panificados {
-    background: linear-gradient(to top, #B8934E 0%, #B8934E 49%, #000000 50%, #8A6422 51%, #8A6422 100%);
-    border-color: #000000;
-}
+

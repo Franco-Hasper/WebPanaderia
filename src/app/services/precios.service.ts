@@ -12,33 +12,35 @@ export class PreciosService {
   API_ENDPOINT = 'http://127.0.0.1:8000/api';
 
   precios: Precio[];
-  listaPrecios: number[]=new Array();
+  listaPrecios: number[] = new Array();
 
-  constructor() {
+  constructor(private httpClient: HttpClient) { }
 
 
-  }
-obtenerLista(httpClient){
-  httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id).subscribe((data: Precio[]) => {
-    this.precios = data;
-    this.precios.forEach(precio => {
-      this.listaPrecios.push(precio.precio_total);
+
+  obtenerLista(httpClient) {
+    httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/" + this.id).subscribe((data: Precio[]) => {
+      this.precios = data;
+      this.precios.forEach(precio => {
+        this.listaPrecios.push(precio.precio_total);
+      });
     });
-  });
-}
+  }
 
-vaciarLista(){
-  this.listaPrecios=[];
-}
-getListaPrecios(){
-  return this.listaPrecios;
-}
+  vaciarLista() {
+    this.listaPrecios = [];
+  }
+  getListaPrecios() {
+    return this.listaPrecios;
+  }
 
-  setId(valor:string){
-    this.id=valor;
+  setId(valor: string) {
+    this.id = valor;
   }
 
   get() {
-    return this.httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id);
+    return this.httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/" + this.id);
   }
+
+
 }

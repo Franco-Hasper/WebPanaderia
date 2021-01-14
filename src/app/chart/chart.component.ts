@@ -19,12 +19,14 @@ export class ChartComponent {
   constructor(private precioService: PreciosService, private activateRoute: ActivatedRoute, private httpClient: HttpClient) {
     this.id = this.activateRoute.snapshot.params['id'];
     this.precioService.setId(this.id);
-    this.precioService.obtenerLista(httpClient);
+    this.precioService.obtenerLista(this.httpClient);
     this.updateData(this.precioService.getListaPrecios());
     this.precioService.vaciarLista();
   }
 
+  
 
+  
   Highcharts: typeof Highcharts = Highcharts;
   updateFlag = false;
   oneToOneFlag = true;
