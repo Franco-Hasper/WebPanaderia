@@ -23,7 +23,7 @@ export class TableComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this.productoService.get().subscribe((data: Producto[]) => {
+    this.productoService.getSpringBoot().subscribe((data: Producto[]) => {
            this.productos = data;
         // Calling the DT trigger to manually render the table
         this.dtTrigger.next();

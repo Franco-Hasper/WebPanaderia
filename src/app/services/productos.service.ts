@@ -7,7 +7,14 @@ import { Producto } from './../interfaces/productos';
 })
 export class ProductosService {
   API_ENDPOINT = 'http://127.0.0.1:8000/api';
+  API_ENDPOINTSPRING = 'http://127.0.0.1:8080/api';
+
+  
   constructor(private httpClient: HttpClient) { }
+
+  getSpringBoot(){
+    return this.httpClient.get(this.API_ENDPOINTSPRING + '/productos');
+  }
   get() {
     return this.httpClient.get(this.API_ENDPOINT + '/listaProductos');
   }
