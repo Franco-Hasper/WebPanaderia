@@ -34,11 +34,12 @@ export class ChartComponent {
       const listaPrecios: number[] = new Array();
       precios.forEach(precio => {
         listaPrecios.push(precio.precio_total);
+        console.log(precio.precio_total)
         //seccion grafica
         this.chart = new Chart("canvas", {
-          type: "bar",
+          type: "line",
           data: {
-            labels: listaPrecios,
+            labels: [listaPrecios],
             datasets: [
               {
                 label: "Precio",

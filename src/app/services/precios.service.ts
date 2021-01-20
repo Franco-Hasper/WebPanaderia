@@ -10,6 +10,7 @@ export class PreciosService {
   id: string;
 
   API_ENDPOINT = 'http://127.0.0.1:8000/api';
+  API_ENDPOINTSPRING = 'http://127.0.0.1:8080/api';
 
   precios: Precio[];
   listaPrecios: number[] = new Array();
@@ -38,6 +39,9 @@ export class PreciosService {
     this.id = valor;
   }
 
+  getSpringBoot(){
+    return this.httpClient.get(this.API_ENDPOINTSPRING + '/precioproductos/'+this.id);
+  }
   get() {
     return this.httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id);
   }
