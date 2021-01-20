@@ -39,7 +39,7 @@ export class ChartComponent {
         this.chart = new Chart("canvas", {
           type: "line",
           data: {
-            labels: [listaPrecios],
+            labels: listaPrecios,
             datasets: [
               {
                 label: "Precio",
