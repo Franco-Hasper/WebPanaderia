@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { PreciosService } from './../services/precios.service';
 import { Precio } from './../interfaces/precios';
 import { Component } from "@angular/core";
+import { Chart } from "chart.js";
 import { ActivatedRoute } from "@angular/router";
 import * as Highcharts from "highcharts";
 import { Options } from "highcharts";
@@ -16,6 +17,62 @@ import { Options } from "highcharts";
 export class ChartComponent {
   id: string;
 
+
+
+  title = "app";
+  chart = [];
+
+  constructor(private precioService: PreciosService, private activateRoute: ActivatedRoute) { }
+
+  ngOnInit() {
+    //obtener id de tabla
+    this.id = this.activateRoute.snapshot.params['id'];
+    this.precioService.setId(this.id);
+    //obtener datos
+    this.precioService.get().subscribe((data: Precio[]) => {
+      const precios = data;
+      const listaPrecios: number[] = new Array();
+      precios.forEach(precio => {
+        listaPrecios.push(precio.precio_total);
+        //seccion grafica
+        this.chart = new Chart("canvas", {
+          type: "bar",
+          data: {
+            labels: listaPrecios,
+            datasets: [
+              {
+                label: "Precio",
+                data: listaPrecios,
+                backgroundColor: "#a3a1dd",
+                borderColor: "blue",
+                borderWidth: 1
+              //  fill: false
+              }
+            ]
+          },
+          options: {
+            scales: {
+              xAxes: [{ display: false }],
+              yAxes: [{ display: true }],
+            }
+          }
+        });
+      });
+    });
+  }
+
+
+
+
+
+
+}
+
+
+
+
+/*
+
   constructor(private precioService: PreciosService, private activateRoute: ActivatedRoute, private httpClient: HttpClient) {
     this.id = this.activateRoute.snapshot.params['id'];
     this.precioService.setId(this.id);
@@ -24,9 +81,7 @@ export class ChartComponent {
     this.precioService.vaciarLista();
   }
 
-  
 
-  
   Highcharts: typeof Highcharts = Highcharts;
   updateFlag = false;
   oneToOneFlag = true;
@@ -63,58 +118,4 @@ export class ChartComponent {
 
 }
 
-
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
-})
-export class ChartComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
 */
-
-/*
-Highcharts: typeof Highcharts = Highcharts;
-  updateFlag = false;
-  oneToOneFlag = true;
-  //Ir a cualquier ejemplo, buscar JS archivo y copiar desde chart:{}
-  // reemplazar aqui para obtener el ejemplo
-  chartOptions: Options = {
-    chart: {
-      type: "spline"
-    },
-    title: {
-      text: "Historial de Precios Producto"
-    },
-    subtitle: {
-      text: "Aqui un resultado ej Pan"
-    },
-    xAxis: {
-      categories: [      ]
-    },
-    yAxis: {
-      title: {
-        text: "Precio $"
-      }
-    },
-    tooltip: {
-      valueSuffix: " $"
-    },
-    //Seccion datos.
-    series: [
-      {
-        name: 'Producto 1',
-        type: "line",
-        data: []
-      }
-    ]
-
-  };*/

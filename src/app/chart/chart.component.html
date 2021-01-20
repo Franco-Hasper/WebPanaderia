@@ -1,13 +1,9 @@
 <div class="container ">
-  <div class="row m-0  justify-content-center align-items-center vh-100">
-    <highcharts-chart 
-    [Highcharts]="Highcharts"
-    [constructorType]="'chart'"
-    [options]="chartOptions"
-    [(update)]="updateFlag"
-    [oneToOne]="oneToOneFlag"
-    ></highcharts-chart>
+  <!--  <div class="row m-0  justify-content-center align-items-center vh-100"> -->
+  <div *ngIf="chart">
+    <canvas id="canvas">
+      {{chart}}
+    </canvas>
+    <!-- </div>-->
   </div>
 </div>
-
-

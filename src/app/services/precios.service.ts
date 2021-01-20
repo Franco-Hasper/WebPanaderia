@@ -39,7 +39,7 @@ export class PreciosService {
   }
 
   get() {
-    return this.httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/" + this.id);
+    return this.httpClient.get(this.API_ENDPOINT + "/listaPrecios/byProductoId/"+this.id);
   }
 
 
