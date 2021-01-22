@@ -1,3 +1,5 @@
+import { PrecioProducto } from './../interfaces/precioProducto';
+import { PrecioProductoService } from './../services/precioproducto.service';
 import { Producto } from './../interfaces/productos';
 import { ProductosService } from './../services/productos.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,14 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreciosComponent implements OnInit {
 
-  constructor(private productoService: ProductosService) { }
+  constructor( private precioProductoService: PrecioProductoService) { }
 
-  productos: Producto[] = [];
+  precios: PrecioProducto[] = [];
+
+
   ngOnInit(): void {
-    
-    this.productoService.get().subscribe((data: Producto[]) => {
-           this.productos = data;
-      });
+
+    this.precioProductoService.get().subscribe((data: PrecioProducto[]) => {
+      data.forEach(precio => {
+        if (precio.producto.codigo_estado == 1) {
+          console.log(precio.producto.codigo_estado)
+          this.precios.push(precio);
+        }
+        //      this.productos=precio.productoid
+      })
+    });
+    //this.precioProductoService.obtenerLista();
+
   }
+
 
 }

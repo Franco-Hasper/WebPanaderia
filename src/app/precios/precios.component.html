@@ -1,14 +1,18 @@
 <div class="containerHome">
     <div class="row">
-        <div class="col-md-4" *ngFor="let producto of productos">
+        <div class="col-md-4" *ngFor="let precio of precios">
             <div class="card">
                 <div  class="col-md-12">
                     PRODUCTO:
-                    {{producto.nombre}}
+                    {{precio.producto.nombre}}
                 </div>
                 <div  class="col-md-12">
                     DESCRIPCION:
-                    {{producto.descripcion}}
+                    {{precio.producto.descripcion}}
+                </div>
+                <div  class="col-md-12">
+                    PRECIO:
+                    {{precio.precio_total}}
                 </div>
             </div>
         </div>

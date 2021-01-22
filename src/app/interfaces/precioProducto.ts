@@ -1,6 +1,7 @@
-export class Precio{
+import { Producto } from './productos';
+export class PrecioProducto{
     id?:number;
-    productoid:number;
+    producto :Producto;
     precio_bruto:number;
     fecha:Date;
     precio_total:number;
