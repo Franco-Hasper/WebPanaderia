@@ -20,15 +20,13 @@ export class PreciosComponent implements OnInit {
 
     this.precioProductoService.get().subscribe((data: PrecioProducto[]) => {
       data.forEach(precio => {
-        if (precio.producto.codigo_estado == 1) {
-          console.log(precio.producto.codigo_estado)
+        if (precio.estadoid==1) {
           this.precios.push(precio);
         }
         //      this.productos=precio.productoid
       })
     });
     //this.precioProductoService.obtenerLista();
-
   }
 
 
