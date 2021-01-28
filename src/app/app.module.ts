@@ -13,6 +13,7 @@ import { ChartComponent } from './chart/chart.component';
 import { TableComponent } from './table/table.component';
 import { DataTablesModule } from 'angular-datatables';
 import { PreciosComponent } from './precios/precios.component';
+import { SesionComponent } from './sesion/sesion.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Route[] = [
   { path: 'grafica/:id', component: ChartComponent },
   { path: 'tabla-productos', component: TableComponent },
   {path: 'precios', component: PreciosComponent },
+  {path: 'sesion', component: SesionComponent },
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const routes: Route[] = [
     LoginComponent,
     ChartComponent,
     TableComponent,
-    PreciosComponent
+    PreciosComponent,
+    SesionComponent
   ],
   imports: [
     BrowserModule,

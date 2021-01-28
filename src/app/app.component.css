@@ -1,3 +1,28 @@
-.navbar-nav{
-    padding-left: 7%;
+.navbar {
+  z-index: 2;
+  background-color: #805300;
+}
+
+.btn {
+  transition: all 0.5s ease;
+  border-radius: 30px;
+  color: #7c5500;
+  font-weight: 700;
+  background-color: #fff;
+  border: 3px solid #e7e77a;
+width: 160px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #805300;
+  color: #fff;
+}
+
+@media screen and (max-width: 575px) {
+  .btn {
+    background-color: #000000;
+
+  }
+
 }

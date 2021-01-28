@@ -1,8 +1,54 @@
-.containerHome{
-  padding-top: 10%;
-  padding-left: 30%;
+.main_container {
+
 }
 
+.container {
+  margin-top: 7%;
+  font-family: 'delitsch';
+}
+
+.container p {
+  color: #7c5500;
+  font-weight: 100;
+  position: relative;
+  font-family: 'delitsch';
+  text-align: justify;
+  margin-left: 10%;
+  z-index: 1;
+}
+
+.container img {
+
+  position: fixed;
+  z-index: 0;
+  width: 50%;
+  bottom: 0px;
+  left: 0px;
+}
+
+
+
+
+@font-face{
+	font-family: 'delitsch';
+	src: url("../fonts/DelitschAntiqua.ttf");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .card {
   height: 230px;
   -webkit-transition: height .4s;
@@ -25,7 +71,7 @@
 .btn {
   position: absolute;
   height: 230px;
-  /*quitar linea azul al seleccionar boton*/
+  //quitar linea azul al seleccionar boton
   outline: none;
   cursor: pointer;
   -webkit-transition: height .4s;
@@ -57,3 +103,5 @@
   opacity: .6;
   -webkit-transition: padding-top .4s;
 }
+
+*/

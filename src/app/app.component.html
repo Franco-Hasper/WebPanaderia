@@ -1,20 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/home">Principal </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/tabla-productos">Tabla Productos</a>
-            </li>
-        </ul>
-    </div>
+<nav class="navbar  navbar-expand-sm">
+    <a class="nav-link" routerLink="/home">
+        <div class="btn">
+            Principal
+        </div>
+    </a>
+    <a class="nav-link" routerLink="/precios">
+        <div class="btn">
+            Catalogo
+        </div>
+    </a>
+    <a class="nav-link" routerLink="/sesion">
+        <div class="btn">
+            Iniciar Sesión
+        </div>
+    </a>
 </nav>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+
+<router-outlet></router-outlet>
+
+
+<!--
+ <a href='https://www.freepik.es/vectores/diseno'>Vector de Diseño creado por macrovector - www.freepik.es</a>
+
+
+
+ -->
