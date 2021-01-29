@@ -1,28 +1,33 @@
-.navbar {
+.container-fluid {
   z-index: 2;
-  background-color: #805300;
+  background-color: #ce7b1ca8;
+}
+
+.catalogobtn{
+ padding-left: 10px;
 }
 
 .btn {
   transition: all 0.5s ease;
   border-radius: 30px;
-  color: #7c5500;
+  color: #fcef7f;
   font-weight: 700;
-  background-color: #fff;
-  border: 3px solid #e7e77a;
+  background-color: rgb(68, 44, 0);
+  border: 3px solid #fcef7f;
 width: 160px;
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: #805300;
+  background-color: #855600;
   color: #fff;
 }
 
 @media screen and (max-width: 575px) {
   .btn {
-    background-color: #000000;
-
+    background-color: #ffffff;
+    color:  rgb(68, 44, 0);
+    display: inline;
   }
 
 }
