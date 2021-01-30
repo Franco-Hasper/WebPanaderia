@@ -1,19 +1,25 @@
-<div class="containerHome">
+<div class="container">
     <div class="row">
         <div class="col-md-4" *ngFor="let precio of precios">
             <div class="card">
-                <div  class="col-md-12">
-                    PRODUCTO:
-                    {{precio.producto.nombre}}
+                <div class="encabezado">
+                    <div class="col-md-12">
+                        PRODUCTO:
+                        {{precio.producto.nombre}}
+                    </div>
+                    <div class="col-md-12">
+                        DESCRIPCIÓN:
+                        {{precio.producto.descripcion}}
+                    </div>
+                    <div class="col-md-12">
+                        PRECIO:
+                        {{precio.precio_total}}
+                    </div>
                 </div>
-                <div  class="col-md-12">
-                    DESCRIPCIÓN:
-                    {{precio.producto.descripcion}}
+                <div class="imagen ">
+                    <img [src]="image.src">
                 </div>
-                <div  class="col-md-12">
-                    PRECIO:
-                    {{precio.precio_total}}
-                </div>
+
             </div>
         </div>
     </div>

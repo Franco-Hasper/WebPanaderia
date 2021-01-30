@@ -11,23 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreciosComponent implements OnInit {
 
-  constructor( private precioProductoService: PrecioProductoService) { }
+  constructor(private precioProductoService: PrecioProductoService) {
 
+
+   }
+
+
+  
   precios: PrecioProducto[] = [];
 
+image=new Image();
 
   ngOnInit(): void {
-
+    
     this.precioProductoService.get().subscribe((data: PrecioProducto[]) => {
       data.forEach(precio => {
-        if (precio.estadoid==1) {
+        if (precio.estadoid == 1) {
           this.precios.push(precio);
+          this.image.src='data:image/png;base64,'+precio.producto.imagen;
+          document.body.appendChild(this.image);
         }
-        //      this.productos=precio.productoid
       })
     });
-    //this.precioProductoService.obtenerLista();
   }
 
-
 }
+
+

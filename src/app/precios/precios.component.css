@@ -1,14 +1,25 @@
 .col-md-4 {
   padding-top: 3%;
   padding-left: 7%;
-}
 
-.card {
-  height: 150px;
-  width: 250px;
-  background:
-    linear-gradient(to top, #CFF4FC 0%, #C5E8EF 49%, #000000 50%, #CFF4FC 51%, #C5E8EF 100%);
-  border-color: #000000;
+}
+.card{
+  border-radius: 20px;
+  background-color: #855600;
+  border: 3px solid #d12020;;
+}
+.encabezado {
   padding-left: 2%;
+  border-color: #000000;
+color: #a2fc7f;
 }
 
+.imagen img {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #d12020;
+}
+.imagen{
+  border: 3px solid #96e78b;;
+  background-color: #2c1f05;
+}
