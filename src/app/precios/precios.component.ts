@@ -29,7 +29,6 @@ image=new Image();
         if (precio.estadoid == 1) {
           this.precios.push(precio);
           this.image.src='data:image/png;base64,'+precio.producto.imagen;
-          document.body.appendChild(this.image);
         }
       })
     });
