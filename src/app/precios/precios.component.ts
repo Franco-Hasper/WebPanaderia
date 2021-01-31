@@ -14,26 +14,30 @@ export class PreciosComponent implements OnInit {
   constructor(private precioProductoService: PrecioProductoService) {
 
 
-   }
+  }
 
 
-  
+
   precios: PrecioProducto[] = [];
+  img: String[] = [];
 
-image=new Image();
 
   ngOnInit(): void {
-    
+
     this.precioProductoService.get().subscribe((data: PrecioProducto[]) => {
       data.forEach(precio => {
         if (precio.estadoid == 1) {
-          this.precios.push(precio);
-          this.image.src='data:image/png;base64,'+precio.producto.imagen;
+          if(precio.producto.codigo_estado==1){
+            this.precios.push(precio);
+            this.img.push('data:image/png;base64,' + precio.producto.imagen);
+          }
+         
         }
       })
     });
   }
-
 }
 
 
+// image=new Image();
+// this.image.src='data:image/png;base64,'+precio.producto.imagen;

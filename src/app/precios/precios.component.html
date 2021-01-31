@@ -1,26 +1,32 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4" *ngFor="let precio of precios">
+        <div class="col-md-4" *ngFor="let precio of precios; index as i">
             <div class="card">
                 <div class="encabezado">
                     <div class="col-md-12">
-                        PRODUCTO:
                         {{precio.producto.nombre}}
                     </div>
-                    <div class="col-md-12">
-                        DESCRIPCIÓN:
-                        {{precio.producto.descripcion}}
-                    </div>
-                    <div class="col-md-12">
-                        PRECIO:
-                        {{precio.precio_total}}
-                    </div>
                 </div>
-                <div class="imagen ">
-                    <img [src]="image.src">
+                <div class="col-md-12 center-block">
+                <div class="imagen">
+                    <img [src]="img[i]">
+                    <!-- <img [src]="image.src"> -->
                 </div>
-
+            </div>
+                <div class="descripcion">
+                    ------------------
+                    <br><br>
+                <div class="col-md-12">
+                    DESCRIPCIÓN:
+                    {{precio.producto.descripcion}}
+                </div>
+                <div class="col-md-12">
+                    PRECIO UNIDAD: $
+                    {{precio.precio_total}}
+                </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<br>    
